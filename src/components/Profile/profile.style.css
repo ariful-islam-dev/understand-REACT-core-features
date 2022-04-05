@@ -1,0 +1,63 @@
+.container {
+  width: 100%;
+  min-height: 100px;
+  padding: 20px;
+  margin-top: 50px;
+  border: 1px solid #ddd;
+}
+
+.bio,
+.skills,
+.links {
+  margin-bottom: 30px;
+}
+.bio h3 {
+  font-size: 24px;
+  font-weight: 400;
+}
+.bio p {
+  font-size: 17px;
+  color: #222;
+  margin-top: 5px;
+}
+
+.skills h3 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.skills ul,
+.links ul {
+  list-style-type: none;
+}
+
+.skills ul li {
+  display: inline-block;
+  padding: 5px 15px;
+  margin-right: 20px;
+  background: #efefef;
+
+  border-radius: 5px;
+}
+
+.links h3 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.links ul li {
+  display: inline-block;
+  padding: 5px 15px;
+  margin-right: 20px;
+}
+.links ul li a {
+  color: #02075d;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.links ul li a:hover {
+  color: #ffa500;
+}
