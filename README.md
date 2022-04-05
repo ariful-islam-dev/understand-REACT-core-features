@@ -4,6 +4,6 @@
 
 ### We are going to learn
 
-- [x] Understanding & Working with Components
-- [x] Understanding & Working with JSX
-- [x] Understanding & Working with Props
+- [x] What is State
+- [x] Why do We need state
+- [x] How to change status
