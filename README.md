@@ -4,6 +4,6 @@
 
 ### We are going to learn
 
-- [x] Create React App - React CLI
-- [x] React Project Structure
-- [x] Start Our Journey with React
+- [x] Understanding & Working with Components
+- [x] Understanding & Working with JSX
+- [x] Understanding & Working with Props

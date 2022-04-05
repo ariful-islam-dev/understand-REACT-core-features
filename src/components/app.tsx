@@ -6,9 +6,19 @@ class App extends Component {
       <div>
         <h1>Ariful Islam</h1>
         <h2>Hello React Your are awesome</h2>
+        {MyFunctionalComponent()}
       </div>
     );
   }
 }
 
 export default App;
+
+function MyFunctionalComponent() {
+  const name: String = "Ariful Islam";
+  return <h1>I am functional Components</h1>;
+}
+
+const AnotherfunctionalComponent = () => (
+  <h1>I am anouther functonal Component</h1>
+);
