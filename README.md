@@ -4,7 +4,6 @@
 
 ### We are going to learn
 
-- [x] Tools We Need to Up & Running REact
-- [x] BabelJS & Webpack Setup
-- [x] Create Our Custom Environment
-- [x] Create Our First React App
+- [x] Create React App - React CLI
+- [x] React Project Structure
+- [x] Start Our Journey with React
