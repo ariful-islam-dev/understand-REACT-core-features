@@ -11,12 +11,22 @@ class Child extends Component<{ func: Function }> {
     return <h1>I am Child</h1>;
   }
 }
+
+const ChildComponent = (props: any) => {
+  return (
+    <div>
+      <h3> I am Component</h3>
+      <p>I don't know what to do</p>
+      {props.children}
+    </div>
+  );
+};
 class App extends Component {
   getContext(context: any) {
     console.log(context);
   }
   render() {
-    this.getContext(this);
+    // this.getContext(this);
     const style = { marginTop: "30px", marginBottom: "30px" };
     return (
       <div className="App">
@@ -30,7 +40,11 @@ class App extends Component {
           <Skills skillA="Node" skillB="Express" skillC="MongoDB" />
           <MyProps name="Abdullah Al Zarif" />
         </div>
-        <Child func={this.getContext} />
+        {/* <Child func={this.getContext} /> */}
+        <ChildComponent>
+          <h2>Hello, I am from Parent</h2>
+          <h4> I am child of child component</h4>
+        </ChildComponent>
       </div>
     );
   }
