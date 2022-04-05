@@ -4,8 +4,19 @@ import Bio from "./Profile/Bio";
 import Skills from "./Profile/Skills";
 import MyProps from "./Props";
 
-class App extends Component {
+class Child extends Component<{ func: Function }> {
   render() {
+    this.props.func(this);
+
+    return <h1>I am Child</h1>;
+  }
+}
+class App extends Component {
+  getContext(context: any) {
+    console.log(context);
+  }
+  render() {
+    this.getContext(this);
     const style = { marginTop: "30px", marginBottom: "30px" };
     return (
       <div className="App">
@@ -19,6 +30,7 @@ class App extends Component {
           <Skills skillA="Node" skillB="Express" skillC="MongoDB" />
           <MyProps name="Abdullah Al Zarif" />
         </div>
+        <Child func={this.getContext} />
       </div>
     );
   }
