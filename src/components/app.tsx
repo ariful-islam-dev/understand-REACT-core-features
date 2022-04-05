@@ -5,20 +5,11 @@ class App extends Component {
     return (
       <div>
         <h1>Ariful Islam</h1>
-        <h2>Hello React Your are awesome</h2>
-        {MyFunctionalComponent()}
+        <h2>what is JSX</h2>
+        <p>JSX is Awesome and it's mean Javascript Extention</p>
       </div>
     );
   }
 }
 
 export default App;
-
-function MyFunctionalComponent() {
-  const name: String = "Ariful Islam";
-  return <h1>I am functional Components</h1>;
-}
-
-const AnotherfunctionalComponent = () => (
-  <h1>I am anouther functonal Component</h1>
-);
