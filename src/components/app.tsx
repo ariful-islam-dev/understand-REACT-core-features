@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Profile from "./Profile";
-import Skills from "./Profile/Skills";
+import MyProps from "./Props";
 
 class App extends Component {
   render() {
@@ -10,11 +10,9 @@ class App extends Component {
         <Profile />
         <div style={style}>
           <h3 style={{ marginBottom: "20px" }}>List of Programms</h3>
-          <h4>Mr. X</h4>
-          <Skills />
-
-          <h4>Mr. Y</h4>
-          <Skills />
+          <MyProps name="Ariful Islam Raju" />
+          <MyProps name="Aysha Mone" />
+          <MyProps name="Abdullah Al Zarif" />
         </div>
       </div>
     );

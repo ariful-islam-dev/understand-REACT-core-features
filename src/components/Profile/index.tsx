@@ -6,6 +6,8 @@ import Skills from "./Skills";
 
 class Profile extends Component {
   render() {
+    console.log("Profile - ", this.props);
+
     return (
       <div className="container">
         <Bio />
