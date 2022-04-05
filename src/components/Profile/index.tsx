@@ -5,13 +5,18 @@ import "./profile.style.css";
 import Skills from "./Skills";
 
 class Profile extends Component {
+  me = {
+    name: "Ariful Islam",
+    title: "Fullstack Javascript Frontend Web developer",
+    skillA: "Java",
+    skillB: "Javascript",
+    skillC: "Python",
+  };
   render() {
-    console.log("Profile - ", this.props);
-
     return (
       <div className="container">
-        <Bio />
-        <Skills />
+        <Bio name={this.me.name} title={this.me.title} />
+        <Skills {...this.me} />
         <Links />
       </div>
     );

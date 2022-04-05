@@ -1,9 +1,9 @@
 import React from "react";
 
-const Bio = () => (
+const Bio = (props: any) => (
   <div className="bio">
-    <h1>Md Ariful Islam</h1>
-    <p>Junior Frontend Web Developer</p>
+    <h1>{props.name}</h1>
+    <p>{props.title}</p>
   </div>
 );
 
