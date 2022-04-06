@@ -9,7 +9,7 @@ const BoxB = () => {
         quidem nostrum et qui aliquam! Sequi cupiditate beatae fugit, ipsa ab
         itaque natus minima, est ullam enim error, quia earum voluptates.
       </p>
-      <button>Click Box B</button>
+      <button className="button">Click Box A</button>
     </div>
   );
 };

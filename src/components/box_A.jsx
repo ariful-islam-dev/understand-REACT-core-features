@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "./button";
 
 const BoxA = () => {
   return (
@@ -9,7 +10,7 @@ const BoxA = () => {
         quidem nostrum et qui aliquam! Sequi cupiditate beatae fugit, ipsa ab
         itaque natus minima, est ullam enim error, quia earum voluptates.
       </p>
-      <button>Click Box A</button>
+      <Button>Click Box A</Button>
     </div>
   );
 };

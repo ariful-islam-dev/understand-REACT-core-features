@@ -1,26 +1,5 @@
-.App {
-  text-align: center;
-}
-
-.Heading {
-  text-align: center;
-  font-weight: 800;
-  margin-bottom: 50px;
-}
-.Container {
-  width: 100%;
-  text-align: center;
-}
-
-.Btn {
-  width: 100px;
-  margin: 10px 20px;
-  padding: 10px 20px;
-  color: #efefef;
-  border: 1px solid grey;
-  background: #222;
-}
-.Text {
-  font-size: 30px;
-  font-weight: bold;
+.button {
+  background-color: green;
+  padding: 10px;
+  margin: 10px;
 }

@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "./app.style.css";
 import BoxA from "./box_A";
 import BoxB from "./box_B";
+import Button from "./button";
+import "./button.css";
 
 class App extends Component {
   myHeader = {
@@ -24,7 +26,7 @@ class App extends Component {
         >
           Another Header Tag
         </h1>
-        <button>Click Me</button>
+        <Button>Click Me</Button>
         <BoxA />
         <BoxB />
       </div>
