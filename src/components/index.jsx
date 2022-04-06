@@ -1,33 +1,18 @@
 import React, { Component } from "react";
-import "./app.style.css";
-import BoxA from "./box_A";
-import BoxB from "./box_B";
-import Button from "./button";
+import classes from "./app.module.css";
 
 class App extends Component {
-  myHeader = {
-    color: "blue",
-    fontWight: 300,
-    fontFamily: "Arial",
-    fontSize: "36px",
+  handleButtonClick = (event) => {
+    console.log(event.target);
+    console.log("I am a cute lettle button");
   };
   render() {
     return (
-      <div>
-        <h1 style={this.myHeader}>How to Style React App</h1>
-        <h1
-          style={{
-            color: "blue",
-            fontWight: 300,
-            fontFamily: "Arial",
-            fontSize: "36px",
-          }}
-        >
-          Another Header Tag
-        </h1>
-        <Button>Click Me</Button>
-        <BoxA />
-        <BoxB />
+      <div className={classes.Wrapper}>
+        <h1 className={classes.Heading}>Events in React</h1>
+        <button onClick={this.handleButtonClick} className={classes.Btn}>
+          Click Me
+        </button>
       </div>
     );
   }

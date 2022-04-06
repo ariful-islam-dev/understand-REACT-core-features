@@ -1,0 +1,12 @@
+.Wrapper {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.Btn {
+  font-size: 16px;
+  width: 200px;
+  padding: 10px;
+  background: linear-gradient(to bottom, #998c8c, rgb(110 95 95));
+  color: #19f23d;
+}

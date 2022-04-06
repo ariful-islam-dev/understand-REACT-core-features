@@ -4,13 +4,6 @@
 
 ### We are going to learn
 
-- [x] How to Style Rect Apps
-- [x] Which is The Best Method of Style
-- [x] Styles in Action
-
-### Way of Style in React
-
-- > Inline CSS
-- > CSS Class
-- > CSS Module
-- > JSS (Style Component)
+- [x] What is Event
+- [x] How to Handle Events in React
+- [x] Some Basic Events in React
