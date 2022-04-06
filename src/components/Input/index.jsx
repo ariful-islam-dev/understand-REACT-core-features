@@ -6,6 +6,8 @@ class Inputs extends Component {
     country: "",
     bio: "",
     birthDay: "",
+    gender: "",
+    agree: false,
   };
 
   handleChange = (event) => {
@@ -13,8 +15,14 @@ class Inputs extends Component {
       [event.target.name]: event.target.value,
     });
   };
+
+  handleCheckBox = (e) => {
+    this.setState({
+      agree: e.target.checked,
+    });
+  };
   render() {
-    const { name, country, bio, birthDay } = this.state;
+    const { name, country, bio, birthDay, agree } = this.state;
     return (
       <div>
         <input
@@ -52,6 +60,38 @@ class Inputs extends Component {
           value={birthDay}
           onChange={this.handleChange}
         />
+        <div>
+          <input
+            type="radio"
+            name="gender"
+            value="Male"
+            onChange={this.handleChange}
+          />
+          Male
+          <input
+            type="radio"
+            name="gender"
+            value="Female"
+            onChange={this.handleChange}
+          />
+          Female
+          <input
+            type="radio"
+            name="gender"
+            value="other"
+            onChange={this.handleChange}
+          />
+          Other
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            name="agree"
+            checked={agree}
+            onChange={this.handleCheckBox}
+          />{" "}
+          I agree to all the terms and condition
+        </div>
         <button onClick={() => console.log(this.state)}>Show Data</button>
       </div>
     );
