@@ -6,6 +6,10 @@ class App extends Component {
     console.log(event.target);
     console.log("I am a cute lettle button");
   };
+
+  handleChange = (event) => {
+    console.log(event.target.value);
+  };
   render() {
     return (
       <div className={classes.Wrapper}>
@@ -13,6 +17,15 @@ class App extends Component {
         <button onClick={this.handleButtonClick} className={classes.Btn}>
           Click Me
         </button>
+        <br />
+        <input
+          className={classes.TextField}
+          type="text"
+          name=""
+          id=""
+          placeholder="Enter some text"
+          onChange={this.handleChange}
+        />
       </div>
     );
   }
