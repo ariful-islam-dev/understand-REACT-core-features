@@ -4,6 +4,13 @@
 
 ### We are going to learn
 
-- [x] What is State
-- [x] Why do We need state
-- [x] How to change status
+- [x] How to Style Rect Apps
+- [x] Which is The Best Method of Style
+- [x] Styles in Action
+
+### Way of Style in React
+
+- > Inline CSS
+- > CSS Class
+- > CSS Module
+- > JSS (Style Component)
