@@ -3,7 +3,6 @@ import "./app.style.css";
 import BoxA from "./box_A";
 import BoxB from "./box_B";
 import Button from "./button";
-import "./button.css";
 
 class App extends Component {
   myHeader = {
