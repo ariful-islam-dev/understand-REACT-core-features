@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import classes from "./app.module.css";
+import Input from "./Input";
 
 class App extends Component {
   state = {
@@ -26,25 +27,9 @@ class App extends Component {
   render() {
     return (
       <div className={classes.Wrapper}>
-        <h1 className={classes.Heading}>Events in React</h1>
-        <button onClick={this.handleButtonClick} className={classes.Btn}>
-          Click Me
-        </button>
-        <br />
-        <input
-          className={classes.TextField}
-          type="text"
-          name=""
-          id=""
-          value={this.state.name}
-          placeholder="Enter some text"
-          onChange={this.handleChange}
-          onFocus={this.handleFocus}
-          onBlur={this.handleBlur}
-        />
-        <br />
-        <br />
-        {this.state.name && <h3>Welcome, {this.state.name}</h3>}
+        <h1 className={classes.Heading}>Working with Forms is React</h1>
+        <hr />
+        <Input />
       </div>
     );
   }

@@ -4,6 +4,9 @@
 
 ### We are going to learn
 
-- [x] What is Event
-- [x] How to Handle Events in React
-- [x] Some Basic Events in React
+- [x] Basic Input Elements
+- [x] checkbox and Radio Buttons
+- [x] Controlled and UnControlled Forms
+- [x] Create Forms in React
+- [x] Form Validation
+- [x] State Lifting
