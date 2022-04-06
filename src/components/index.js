@@ -3,7 +3,7 @@ import "./app.style.css";
 
 class App extends Component {
   state = {
-    count: 0,
+    count: 0
   };
 
   render() {
