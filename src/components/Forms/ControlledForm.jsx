@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Form from "./Form";
 
 class ControlledForm extends Component {
   state = {
@@ -25,39 +26,21 @@ class ControlledForm extends Component {
   };
 
   render() {
-    const { name, email, password } = this.state;
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            className="form-control"
-            type="text"
-            name="name"
-            value={name}
-            placeholder="Type your name"
-            onChange={this.handleChange}
-          />
-          <input
-            className="form-control"
-            type="email"
-            name="email"
-            value={email}
-            placeholder="example@gmail.com"
-            onChange={this.handleChange}
-          />
-          <input
-            className="form-control"
-            type="password"
-            name="password"
-            value={password}
-            placeholder="*******************"
-            onChange={this.handleChange}
-          />
-          <button type="submit">Submit</button>
-        </form>
+        <Form
+          values={this.state}
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+        />
       </div>
     );
   }
 }
 
 export default ControlledForm;
+
+/**
+ * Index -> State and Logic (submit , change, blur handler and validation)
+ * Form ->
+ */
