@@ -8,6 +8,7 @@ const Form = ({
   handleChange,
   handleAgreement,
   agreement,
+  errors,
 }) => {
   return (
     <form onSubmit={handleSubmit}>
@@ -15,6 +16,7 @@ const Form = ({
         name="name"
         label="Enter Full Name"
         value={values.name}
+        error={errors.name}
         placeholder="Your Name"
         handleChange={handleChange}
       />
@@ -23,6 +25,7 @@ const Form = ({
         type="email"
         label="Enter Your Email Address"
         value={values.email}
+        error={errors.email}
         placeholder="example@gmail.com"
         handleChange={handleChange}
       />
@@ -31,6 +34,7 @@ const Form = ({
         type="password"
         label="Enter Valid Password"
         value={values.password}
+        error={errors.password}
         placeholder="*********"
         handleChange={handleChange}
       />
@@ -39,10 +43,11 @@ const Form = ({
         type="date"
         label="Date of Birth"
         value={values.birthDate}
+        error={errors.birthDate}
         placeholder="Date of Birth"
         handleChange={handleChange}
       />
-      <div className="finput-group">
+      <div className="input-group mb-3">
         <label htmlFor="" className="me-2">
           <input
             className="form-check-input"
@@ -76,6 +81,7 @@ const Form = ({
           Other
         </label>
       </div>
+      {errors.gender ?? <div className="invalid-feedback">{errors.gender}</div>}
       <div className="input-group">
         <label htmlFor="agree">
           <input
@@ -99,6 +105,7 @@ const Form = ({
 Form.propTypes = {
   values: PropTypes.object.isRequired,
   agreement: PropTypes.bool.isRequired,
+  errors: PropTypes.object.isRequired,
   handleChange: PropTypes.func.isRequired,
   handleAgreement: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
