@@ -46,15 +46,42 @@ class Game extends Component {
     });
   };
 
+  jumpTo = (step) => {
+    this.setState({
+      stepNumber: step,
+      xIsNext: step % 2 === 0,
+    });
+  };
+
   render() {
     const history = this.state.history;
     const current = history[this.state.stepNumber];
     const winner = calculateWinner(current.squares);
-    console.log(winner);
+
+    const moves = history.map((_, move) => {
+      const desc = move ? "Go to Move #" + move : "Go to Game State";
+      return (
+        <li key={move}>
+          <button onClick={() => this.jumpTo(move)}>{desc}</button>
+        </li>
+      );
+    });
+
+    let status = "";
+    if (winner) {
+      status = "Winner: " + winner;
+    } else {
+      status = "Next Player: " + (this.state.xIsNext ? "X" : "O");
+    }
     return (
-      <div>
-        <h1>Game Component</h1>
-        <Board onClick={this.handleClick} squares={current.squares} />
+      <div className="game">
+        <div className="game-board">
+          <Board squares={current.squares} onClick={this.handleClick} />
+        </div>
+        <div className="game-info">
+          <div>{status}</div>
+          <ol>{moves}</ol>
+        </div>
       </div>
     );
   }
