@@ -1,29 +1,8 @@
 import React, { Component } from "react";
 import classes from "./app.module.css";
-import ControlledForm from "./Forms/ControlledForm";
+import SignupForm from "./Signup-Form";
 
 class App extends Component {
-  state = {
-    name: "",
-  };
-  handleButtonClick = (event) => {
-    console.log(event.target);
-    console.log("I am a cute lettle button");
-  };
-
-  handleChange = (event) => {
-    this.setState({ name: event.target.value });
-  };
-
-  handleFocus = (e) => {
-    console.log("I am focus Event");
-  };
-  handleBlur = (e) => {
-    if (!this.state.name) {
-      alert("Pleas Enter Your Name");
-    }
-    console.log("I am blur event");
-  };
   render() {
     return (
       <div className={classes.Wrapper}>
@@ -31,7 +10,8 @@ class App extends Component {
         <hr />
         {/* <Input /> */}
         {/* <UnControlledForm /> */}
-        <ControlledForm />
+        {/* <ControlledForm /> */}
+        <SignupForm />
       </div>
     );
   }
