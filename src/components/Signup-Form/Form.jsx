@@ -61,7 +61,7 @@ const Form = ({
         <label className="me-2">
           {" "}
           <input
-            className="form-check-inputl"
+            className="form-check-input"
             type="radio"
             name="gender"
             value="Female"
@@ -80,8 +80,11 @@ const Form = ({
           />
           Other
         </label>
+        {errors.gender && (
+          <div className="invalid-feedback mt-3">{errors.gender}</div>
+        )}
       </div>
-      {errors.gender ?? <div className="invalid-feedback">{errors.gender}</div>}
+
       <div className="input-group">
         <label htmlFor="agree">
           <input
