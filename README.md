@@ -2,6 +2,6 @@
 
 **_Stack Learner_**
 
-### Tic Tac Toe
+### Stack Todos
 
-**Game**
+**Todo Application**
