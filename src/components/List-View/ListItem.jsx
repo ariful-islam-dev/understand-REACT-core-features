@@ -5,7 +5,7 @@ import { Button, Input, ListGroupItem } from "reactstrap";
 // list item Component
 const ListItem = ({ todo, toggleSelect, toggleComplete }) => {
   return (
-    <ListGroupItem className="d-flex align-items-center">
+    <ListGroupItem className="d-flex align-items-center" check>
       <Input
         type="checkbox"
         id={todo.isSelect}
@@ -13,12 +13,12 @@ const ListItem = ({ todo, toggleSelect, toggleComplete }) => {
         onchange={() => toggleSelect(todo.id)}
       />
 
-      <div className="mx3">
+      <div className="mx-3">
         <h4>{todo.text}</h4>
         <p>{todo.time.toDateString()}</p>
       </div>
       <Button
-        className="ml-auto"
+        className="ms-auto"
         color={todo.isComplete ? "danger" : "success"}
         onClick={() => toggleComplete(todo.id)}
       >
