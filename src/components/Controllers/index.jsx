@@ -16,6 +16,7 @@ const Controller = ({
   clearSelected,
   clearCompleted,
   reset,
+  filter,
 }) => {
   return (
     <div>
@@ -26,7 +27,7 @@ const Controller = ({
       />
       <Row className="my-4">
         <Col md={{ size: 4 }}>
-          <FilterController handleFilter={handleFilter} />
+          <FilterController handleFilter={handleFilter} filter={filter} />
         </Col>
         <Col md={{ size: 4 }}>
           <ViewController view={view} changeView={changeView} />
@@ -48,6 +49,7 @@ const Controller = ({
 
 Controller.propTypes = {
   searchTerm: PropTypes.string.isRequired,
+  filter: PropTypes.string.isRequired,
   view: PropTypes.string.isRequired,
   handleSearch: PropTypes.func.isRequired,
   toggleForm: PropTypes.func.isRequired,

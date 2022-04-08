@@ -24,10 +24,19 @@ class Todos extends React.Component {
         isComplete: false,
         isSelect: false,
       },
+      {
+        id: "abcaoe19445e",
+        text: "New Task title",
+        description: "A simple description of this todo",
+        time: new Date(),
+        isComplete: false,
+        isSelect: false,
+      },
     ],
     isOpenTodoForm: false,
     searchTerm: "",
     view: "list",
+    filter: "all",
   };
 
   toggleSelect = (todoId) => {
@@ -47,7 +56,14 @@ class Todos extends React.Component {
       isOpenTodoForm: !this.state.isOpenTodoForm,
     });
   };
-  handleSearch = () => {};
+  handleSearch = (value) => {
+    this.setState({ searchTerm: value });
+  };
+  performSearch = () => {
+    return this.state.todos.filter((todo) =>
+      todo.text.toLowerCase().includes(this.state.searchTerm.toLowerCase())
+    );
+  };
 
   createTodo = (todo) => {
     todo.id = shortId.generate();
@@ -60,7 +76,21 @@ class Todos extends React.Component {
     this.toggleForm();
   };
 
-  handleFilter = () => {};
+  handleFilter = (value) => {
+    this.setState({
+      filter: value,
+    });
+  };
+  performFilter = (todos) => {
+    const { filter } = this.state;
+    if (filter === "completed") {
+      return todos.filter((todo) => todo.isComplete);
+    } else if (filter === "running") {
+      return todos.filter((todo) => !todo.isComplete);
+    } else {
+      return todos;
+    }
+  };
   // view,
   changeView = (event) => {
     this.setState({
@@ -72,10 +102,12 @@ class Todos extends React.Component {
   reset = () => {};
 
   getView = () => {
+    let todos = this.performSearch();
+    todos = this.performFilter(todos);
     return this.state.view === "list" ? (
       <div>
         <ListView
-          todos={this.state.todos}
+          todos={todos}
           toggleComplete={this.toggleComplete}
           toggleSelect={this.toggleSelect}
         />
@@ -83,7 +115,7 @@ class Todos extends React.Component {
     ) : (
       <div>
         <TableView
-          todos={this.state.todos}
+          todos={todos}
           toggleComplete={this.toggleComplete}
           toggleSelect={this.toggleSelect}
         />
@@ -104,6 +136,7 @@ class Todos extends React.Component {
           clearSelected={this.clearSelected}
           clearCompleted={this.clearCompleted}
           reset={this.reset}
+          filter={this.state.filter}
         />
         {this.getView()}
         <Modal isOpen={this.state.isOpenTodoForm} toggle={this.toggleForm}>
