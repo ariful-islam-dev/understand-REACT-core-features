@@ -27,7 +27,7 @@ class ParticipateForm extends Component {
     const { errors, isValid } = this.validate();
 
     if (isValid) {
-      this.props.getOpition({
+      this.props.getOpinion({
         pollId: this.props.poll.id,
         name: this.state.name,
         selectedOption: this.state.selectedOption,
@@ -68,14 +68,15 @@ class ParticipateForm extends Component {
           <Button
             color="warning"
             type="button"
-            className="me-auto"
+            className="ms-auto"
             onClick={this.props.toggleModal}
           >
             Edit
           </Button>
           <Button
             type="button"
-            className="me-2"
+            color="danger"
+            className="ms-2"
             onClick={() => this.props.deletePoll(this.props.poll.id)}
           >
             Delete
@@ -91,6 +92,7 @@ class ParticipateForm extends Component {
                 value={opt.id}
                 onChange={this.handleChange}
                 invalid={this.state.errors.selectedOption ? true : false}
+                className="me-2"
               />
               {opt.value}
               <span
@@ -100,21 +102,21 @@ class ParticipateForm extends Component {
                   color: "white",
                   borderRadius: "5px",
                 }}
-                className="me-auto"
+                className="ms-auto"
               >
                 {opt.vote}
               </span>
               <span
                 style={{
-                  padding: "5px, 20px",
-                  background: "green",
+                  padding: "5px 20px",
+                  background: "#916508",
                   color: "white",
                   borderRadius: "5px",
                 }}
-                className="me-2"
+                className="ms-2"
               >
                 {this.props.poll.totalVote > 0
-                  ? ((100 * opt.vote) / this.props.totalvote).toFixed(2)
+                  ? ((100 * opt.vote) / this.props.totalVote).toFixed(2)
                   : 0}{" "}
                 %
               </span>

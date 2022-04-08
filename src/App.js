@@ -49,6 +49,23 @@ class App extends React.Component {
 
   handleSearch = (searchTerm) => {};
 
+  getOpinion = (response) => {
+    const { polls } = this.state;
+    const poll = polls.find((p) => p.id === response.pollId);
+    const option = poll.opinions.find((o) => o.id === response.selectedPoll);
+
+    poll.totalVote++;
+    option.vote++;
+    const opinion = {
+      id: shortid.generate(),
+      name: response.name,
+      selectedOption: response.selectedOption,
+    };
+
+    poll.opinions.push(opinion)
+    this.setState({polls})
+  };
+
   render() {
     return (
       <Container className="my-5">
@@ -63,7 +80,12 @@ class App extends React.Component {
             />
           </Col>
           <Col md={8}>
-            <MainContent />
+            <MainContent
+              poll={this.state.selectedPoll}
+              getOpinion={this.getOpinion}
+              updatePoll={this.updatePoll}
+              deletePoll={this.deletePoll}
+            />
           </Col>
         </Row>
       </Container>
