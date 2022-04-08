@@ -116,8 +116,8 @@ class ParticipateForm extends Component {
                 className="ms-2"
               >
                 {this.props.poll.totalVote > 0
-                  ? ((100 * opt.vote) / this.props.totalVote).toFixed(2)
-                  : 0}{" "}
+                  ? ((100 * opt.vote) / this.props.poll.totalVote).toFixed(2)
+                  : 0}
                 %
               </span>
             </Label>
