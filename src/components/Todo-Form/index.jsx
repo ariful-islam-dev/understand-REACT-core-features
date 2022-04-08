@@ -9,6 +9,7 @@ class TodoForm extends React.Component {
   };
 
   handleChange = (event) => {
+    console.log(event.target.name);
     this.setState({
       [event.target.name]: event.target.value,
     });
@@ -30,8 +31,9 @@ class TodoForm extends React.Component {
           <Input
             placeholder="Do some text"
             name="text"
+            type="text"
             value={this.state.text}
-            onchange={this.handleChange}
+            onChange={this.handleChange}
           />
         </FormGroup>
         <FormGroup>
@@ -41,7 +43,7 @@ class TodoForm extends React.Component {
             name="description"
             type="textarea"
             value={this.state.description}
-            onchange={this.handleChange}
+            onChange={this.handleChange}
           />
         </FormGroup>
         <Button type="submit">Create Task</Button>

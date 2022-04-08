@@ -12,6 +12,7 @@
     "react-dom": "^18.0.0",
     "react-scripts": "5.0.0",
     "reactstrap": "^9.0.1",
+    "shortid": "^2.2.16",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
