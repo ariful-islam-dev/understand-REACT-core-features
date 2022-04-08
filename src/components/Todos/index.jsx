@@ -27,6 +27,7 @@ class Todos extends React.Component {
     ],
     isOpenTodoForm: false,
     searchTerm: "",
+    view: "list",
   };
 
   toggleSelect = (todoId) => {
@@ -58,29 +59,53 @@ class Todos extends React.Component {
     this.setState({ todos });
     this.toggleForm();
   };
+
+  handleFilter = () => {};
+  // view,
+  changeView = (event) => {
+    this.setState({
+      view: event.target.value,
+    });
+  };
+  clearSelected = () => {};
+  clearCompleted = () => {};
+  reset = () => {};
+
+  getView = () => {
+    return this.state.view === "list" ? (
+      <div>
+        <ListView
+          todos={this.state.todos}
+          toggleComplete={this.toggleComplete}
+          toggleSelect={this.toggleSelect}
+        />
+      </div>
+    ) : (
+      <div>
+        <TableView
+          todos={this.state.todos}
+          toggleComplete={this.toggleComplete}
+          toggleSelect={this.toggleSelect}
+        />
+      </div>
+    );
+  };
   render() {
     return (
       <div>
         <h1 className="display-4 text-center mb-5"> Stack Todos</h1>
         <Controller
           searchTerm={this.state.searchTerm}
+          view={this.state.view}
           toggleForm={this.toggleForm}
           handleSearch={this.handleSearch}
+          handleFilter={this.handleFilter}
+          changeView={this.changeView}
+          clearSelected={this.clearSelected}
+          clearCompleted={this.clearCompleted}
+          reset={this.reset}
         />
-        <div>
-          <ListView
-            todos={this.state.todos}
-            toggleComplete={this.toggleComplete}
-            toggleSelect={this.toggleSelect}
-          />
-        </div>
-        <div>
-          <TableView
-            todos={this.state.todos}
-            toggleComplete={this.toggleComplete}
-            toggleSelect={this.toggleSelect}
-          />
-        </div>
+        {this.getView()}
         <Modal isOpen={this.state.isOpenTodoForm} toggle={this.toggleForm}>
           <ModalHeader toggle={this.toggleForm}>
             Create new todo Item
