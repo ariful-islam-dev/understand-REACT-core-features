@@ -44,16 +44,22 @@ class App extends React.Component {
 
   selectPoll = (pollId) => {
     const poll = this.state.polls.find((p) => p.id === pollId);
-    this.setState({selectedPoll: poll})
+    this.setState({ selectedPoll: poll });
   };
 
+  handleSearch = (searchTerm) => {};
 
   render() {
     return (
       <Container className="my-5">
         <Row>
           <Col md={4}>
-            <Sidebar />
+            <Sidebar
+              polls={this.state.polls}
+              searchTerm={this.state.searchTerm}
+              handleSearch={this.handleSearch}
+              selectPoll={this.selectPoll}
+            />
           </Col>
           <Col md={8}>
             <MainContent />
