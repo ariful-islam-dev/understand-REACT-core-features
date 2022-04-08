@@ -1,16 +1,22 @@
+import React from "react";
 import { Col, Container, Row } from "reactstrap";
-import Todos from "./components/Todos";
-
-function App() {
+import MainContent from "./components/MainContent";
+import Sidebar from "./components/Sidebar";
+class App extends React.Component {
+ render(){
   return (
-    <Container className="my-3">
-      <Row>
-        <Col>
-         <Todos/>
-        </Col>
-      </Row>
-    </Container>
-  );
+   <Container className="my-5">
+     <Row>
+       <Col md={4}>
+         <Sidebar/>
+       </Col>
+       <Col md={8}>
+         <MainContent/>
+       </Col>
+     </Row>
+   </Container>
+   );
+ }
 }
 
 export default App;

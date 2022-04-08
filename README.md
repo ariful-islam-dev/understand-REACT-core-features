@@ -2,6 +2,6 @@
 
 **_Stack Learner_**
 
-### Stack Todos
+### Smart Poll
 
-**Todo Application**
+**Poll Application**
